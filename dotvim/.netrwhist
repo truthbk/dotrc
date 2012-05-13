@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/truth/Development/bps/bps-server/.git'
+let g:netrw_dirhist_2='/home/truth/Development/facebook-php-sdk/php-sdk/examples'
+let g:netrw_dirhist_3='/home/truth/Development/buddeo/bps-server-fb/apps/frontend/modules/auth'
+let g:netrw_dirhist_4='/home/truth/Development/buddeo/bps-server-fb/apps/frontend/modules'
+let g:netrw_dirhist_5='/home/truth/mgc/install.ixl'
+let g:netrw_dirhist_6='/home/truth/Development/buddeo/bps-android/res/.metadata'
+let g:netrw_dirhist_7='/usr/src/linux'
