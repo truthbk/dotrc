@@ -1,0 +1,32 @@
+activity ""
+altscreen on
+autodetach on
+defbce on
+deflogin on
+defflow off
+defscrollback 2048
+defutf8 on
+msgwait 1
+nethack on
+nonblock on
+startup_message off
+vbell off
+vbell_msg ""
+
+bell_msg "!!! Ding !!!"
+
+# Only S-K to kill
+# bind k
+# bind ^k
+# bind K kill
+#
+# bind j focus down
+# bind k focus up
+#
+# bindkey -k k; quit
+#
+ term screen-256color
+ terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#
+caption always "%{= kb}[ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%= %{b}][%{B} %H %{W}%l %{b}][%{B} %d.%m.%Y %{W}%0c %{b}]"
+sorendition +b kG
