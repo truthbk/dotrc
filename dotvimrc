@@ -119,6 +119,10 @@ au BufRead,BufNewFile Makefile* set noexpandtab
 
 " Instead of highlighting badwhitespace, I rather use the list and listchars 
 " modes.
+" 
+" NOTE: Since we're using the middle-dot U+00B7 for the trailing characters,
+" make sure you have your terminal/ssh client with UTF-8 encoding. Otherwise
+" you will either get vim complaints or weirdass characters.
 set list listchars=tab:>Â·,trail:Â·,extends:>
 
 " Use UNIX (\n) line endings.
