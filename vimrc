@@ -119,7 +119,7 @@ au BufRead,BufNewFile Makefile* set noexpandtab
 
 " Instead of highlighting badwhitespace, I rather use the list and listchars 
 " modes.
-set list listchars=tab:>-,trail:.,extends:>
+set list listchars=tab:>Â·,trail:Â·,extends:>
 
 " Use UNIX (\n) line endings.
 " Only used for new files so as to not force existing files to change their
