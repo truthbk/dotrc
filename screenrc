@@ -30,3 +30,5 @@ bell_msg "!!! Ding !!!"
 #
 caption always "%{= kb}[ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%?%= %{b}][%{B} %H %{W}%l %{b}][%{B} %d.%m.%Y %{W}%0c %{b}]"
 sorendition +b kG
+
+shell -$SHELL
