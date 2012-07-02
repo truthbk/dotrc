@@ -244,9 +244,13 @@ set laststatus=2
 "    endif
 "endfunction
 
-"""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EXTRAS
-"""""""""
+" 
+" for your powerline, you may want the "compatible" symbols if you're not in X.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'compatible'
 
+set cursorline
 set number
