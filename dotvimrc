@@ -1,3 +1,6 @@
+"activate pathogen
+call pathogen#infect()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -99,10 +102,10 @@ au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
 au BufRead,BufNewFile *.py,*.pyw set expandtab
 fu Select_c_style()
 	if search('^\t', 'n', 150)
-	     set shiftwidth=4
-             set noexpandtab
+		set shiftwidth=8
+		set noexpandtab
 	el 
-		set shiftwidth=2
+		set shiftwidth=4
 		set expandtab
 	en
 endf
@@ -123,7 +126,7 @@ au BufRead,BufNewFile Makefile* set noexpandtab
 " NOTE: Since we're using the middle-dot U+00B7 for the trailing characters,
 " make sure you have your terminal/ssh client with UTF-8 encoding. Otherwise
 " you will either get vim complaints or weirdass characters.
-set list listchars=tab:>Â·,trail:Â·,extends:>
+set list listchars=tab:>·,trail:·,extends:>
 
 " Use UNIX (\n) line endings.
 " Only used for new files so as to not force existing files to change their
@@ -198,6 +201,8 @@ filetype plugin on
 
 set tags=./tags;
 
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
 noremap <silent> <F6> <C-]>
 nnoremap <silent> <F7> <C-R>=BuildCtags()<CR><CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -216,27 +221,32 @@ command -nargs=+ MapToggle call MapToggle(<f-args>)
 
 MapToggle <F11> ignorecase
 
-""""""""""""""""""""""""""""""
-" => Statusline
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""
+"" => Statusline
+"""""""""""""""""""""""""""""""
 " Always hide the statusline
 set laststatus=2
 
 " Format the statusline
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
+"
+"function! CurDir()
+"    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
+"    return curdir
+"endfunction
+"
+"function! HasPaste()
+"    if &paste
+"        return 'PASTE MODE  '
+"    else
+"        return ''
+"    endif
+"endfunction
 
-function! CurDir()
-    let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
-    return curdir
-endfunction
-
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    else
-        return ''
-    endif
-endfunction
+"""""""""
+" EXTRAS
+"""""""""
+let g:Powerline_symbols = 'fancy'
 
 set number
