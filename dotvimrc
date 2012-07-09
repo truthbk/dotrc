@@ -1,5 +1,7 @@
 "activate pathogen
+filetype off
 call pathogen#infect()
+call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -251,6 +253,9 @@ set laststatus=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:Powerline_symbols = 'fancy'
 "let g:Powerline_symbols = 'compatible'
+
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'snipmate'
 
 set cursorline
 set number
