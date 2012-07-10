@@ -1,5 +1,7 @@
 "activate pathogen
+filetype off
 call pathogen#infect()
+call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
