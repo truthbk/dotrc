@@ -251,11 +251,25 @@ set laststatus=2
 " 
 " for your powerline, you may want the "compatible" symbols if you're not in X.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set cursorline
+set number
+
 let g:Powerline_symbols = 'fancy'
 "let g:Powerline_symbols = 'compatible'
 
+" clang_complete + snipmate + SuperTab  extras...
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'snipmate'
 
-set cursorline
-set number
+" Complete options (disable preview scratch window)
+set completeopt=menu,menuone,longest
+" Limit popup menu height
+set pumheight=15
+
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
+" Disable auto popup, use <Tab> to autocomplete
+let g:clang_complete_auto = 0
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
+
