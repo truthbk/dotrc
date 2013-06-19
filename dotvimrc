@@ -1,7 +1,5 @@
 "activate pathogen
-filetype off
 call pathogen#infect()
-call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -64,9 +62,11 @@ if has("gui_running")
   colorscheme desert
   set nonu
 else
-  colorscheme zenburn
+"  let g:solarized_termcolors=256
   set background=dark
-  highlight Pmenu ctermbg=238 gui=bold
+"  colorscheme zenburn
+  colorscheme solarized
+"  highlight Pmenu ctermbg=238 gui=bold
   set nonu
 endif
 
@@ -94,7 +94,10 @@ set wrap "Wrap lines
 
 " Number of spaces that a pre-existing tab is equal to.
 " For the amount of space used for a new tab use shiftwidth.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=8
+au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.cc,*.hh,*.cpp,*.hpp set tabstop=8
+au BufRead,BufNewFile *.c,*.h,*.cc,*.hh,*.cpp,*.hpp set shiftwidth=4
+au BufRead,BufNewFile *.c,*.h,*.cc,*.hh,*.cpp,*.hpp set expandtab
+au BufRead,BufNewFile Makefile* set noexpandtab
 "
 " What to use for an indent.
 " This will affect Ctrl-T and 'autoindent'.
@@ -111,8 +114,7 @@ fu Select_c_style()
 		set expandtab
 	en
 endf
-au BufRead,BufNewFile *.c,*.h call Select_c_style()
-au BufRead,BufNewFile Makefile* set noexpandtab
+"au BufRead,BufNewFile *.c,*.h call Select_c_style()
 
 " Use the below highlight group when displaying bad whitespace is desired.
 " highlight BadWhitespace ctermbg=red guibg=red
@@ -203,10 +205,11 @@ filetype plugin on
 
 set tags=./tags;
 
+nnoremap <F2> :Bufferlist<CR>
 nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F4> :GundoToggle<CR>
+nnoremap <silent> <F5> <C-R>=BuildCtags()<CR><CR>
 noremap <silent> <F6> <C-]>
-nnoremap <silent> <F7> <C-R>=BuildCtags()<CR><CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
 "nnoremap <silent> <F8> :TlistToggle<CR>
 
@@ -246,16 +249,14 @@ set laststatus=2
 "    endif
 "endfunction
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""
 " EXTRAS
-" 
-" for your powerline, you may want the "compatible" symbols if you're not in X.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""
 set cursorline
 set number
 
-let g:Powerline_symbols = 'fancy'
 "let g:Powerline_symbols = 'compatible'
+let g:Powerline_symbols = 'fancy'
 
 " clang_complete + snipmate + SuperTab  extras...
 let g:clang_snippets = 1
